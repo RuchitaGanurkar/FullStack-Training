@@ -1,0 +1,72 @@
+:root {
+  --body_background: #6aa3ec;
+  --todo_background: #ffffff;
+  --customise-background : #000000;
+  --add-task-btn : #1fc445;
+  --border-color: #ce9393 ;
+} /* Creating Variable For Color */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--body_background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .todo-app {
+    padding: 10%;
+    width: 80%;
+    border-radius: 2%;
+    border-width: 2%;
+    height: 50%;
+    width: 50%;
+    background-color: var(--todo_background);
+    text-align: center;
+  }
+
+  h1 {
+    margin-bottom: 0.5%;
+  }
+
+  #background-color {
+    margin-left: 0.05%;
+    margin-right: 0.05%;
+    padding: 0.05%;
+    text-align: center;
+    
+  }
+
+  #task-input {
+    flex: 1;
+    padding: 8px;
+    border: 0.5% solid var(--border-color);
+    border-radius: 4px;
+  }
+  
+  #add-task-btn {
+    padding: 8px 16px;
+    background-color: var(--add-task-btn);
+    color: #000000;
+    border-radius: 2%;
+    border-width: 2%;
+  }
+  
+  #add-task-btn {
+    background-color: var(--add-task-btn);
+  }
+  
+    
+  .add-task {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 0.05%;
+    text-align: center;
+  }
+
+  #task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
