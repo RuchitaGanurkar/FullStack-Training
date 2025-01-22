@@ -15,7 +15,7 @@ function addTask() {
   const taskText = taskInput.value.trim();
   if (!taskText) return;
 
-  const taskItem = createTaskItem(taskText);
+  const taskItem = createTaskItem(taskText); 
   taskList.appendChild(taskItem);
 
   saveTasks();
@@ -28,7 +28,15 @@ function clearAllTasks() {
     taskList.innerHTML = '';
     saveTasks();
   
-    window.alert('Task Clear');
+    window.alert('All Task Clear');
+}
+
+
+function deleteOneTask(task) {
+  task.remove();
+  saveTasks();
+
+  window.alert('One Task Clear');
 }
 
 function changeBackgroundColor(event) {
@@ -38,4 +46,44 @@ function changeBackgroundColor(event) {
 }
 
 
-// Persistence Task & Task Completion Pending
+function createTaskItem(text) {
+  const li = document.createElement('li');
+  li.className = 'task-item';
+
+  const elements = [
+    { tag: 'span', text: text },
+    { tag: 'input', type: 'Checkbox', event: { type: 'change', handler: () => toggleTaskCompletion(li) } },
+    { tag: 'button', text: 'Delete', event: { type: 'click', handler: () => deleteOneTask(li) } }
+  ];
+
+  elements.forEach(({ tag, text, type, event }) => {
+    const element = document.createElement(tag);
+    if (text) element.textContent = text;
+    if (type) element.type = type;
+    if (event) element.addEventListener(event.type, event.handler);
+    li.appendChild(element);
+  });
+
+  return li;
+}
+
+// Once Task Completed It's Being Marked Design Is Given In CSS
+function toggleTaskCompletion(task) {
+  task.classList.toggle('completed');
+  saveTasks();
+
+  window.alert('Task Marked As Completed');
+}
+
+function saveTasks() {
+  const tasks = [];
+  taskList.querySelectorAll('.task-item').forEach((task) => {
+    tasks.push({
+      text: task.querySelector('span').textContent,
+      completed: task.classList.contains('completed'),
+    });
+  });
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
+

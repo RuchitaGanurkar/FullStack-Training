@@ -7,7 +7,7 @@
 } /* Creating Variable For Color */
 
 body {
-    font-family: Arial, sans-serif;
+    font-family:cursive;
     background-color: var(--body_background);
     display: flex;
     justify-content: center;
@@ -79,6 +79,7 @@ body {
     border-radius: 4px;
   }
   
+  /*This Gives Strickthrough Effect To Element*/
   .task-item.completed {
     text-decoration: line-through;
     color: #888;
