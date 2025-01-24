@@ -1,0 +1,54 @@
+#page-heading{
+    font-size: larger;
+    font-style: oblique;
+    text-align: center;
+    color: rgb(64, 127, 129);
+    padding: 5%;
+}
+
+#employee-list-heading{
+    font-size: small;
+    font-style: normal;
+    text-align: left;
+    color: rgb(89, 87, 223);
+    padding: 2%;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 5%;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #4d4242;
+    color: white;
+}
+
+input[type="text"] {
+    width: 80%;
+    padding: 8px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+}
+
+#enter-button, #pagination, #previous, #upcoming, #add, #edit {
+    text-align: center;
+    font-size: 100%;
+    padding: 0.5%;
+    margin-top: 2%;
+    color: chocolate;
+    font-weight: bold;
+    text-decoration: none;
+}
