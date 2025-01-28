@@ -1,49 +1,91 @@
 <!DOCTYPE html>
-<html class="no-js"> <!--<![endif]-->
-<html>
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Employee Managment</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <h4 id="page-heading">
-        This Is Single Page Application Shocasing Employee Managment Usecase
-    </h4>
-    <h2 id="employee-list-heading">Employee List</h2>
+        <header>
+            <h1>Employee Management System</h1>
+            <nav>
+                <button id="showListView" class="active">Employee List</button>
+                <button id="showAddForm">Add Employee</button>
+            </nav>
+        </header>
+         <div class="controls">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Search Here">
+                    </div>
+                    <div class="filters">
+                        <select id="departmentFilter">
+                            <option value="">All Departments</option>
+                            <option value="IT">IT</option>
+                            <option value="HR">HR</option>
+                            <option value="Finance">Finance</option>
+                            <option value="Marketing">Marketing</option>
+                        </select>
+                        </select>
+                    </div>
+                </div>
 
-    <input type="text" id="search-bar" placeholder="Search Here">
-    <button id="enter-button">
-        Enter
-    </button>
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Department</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
+                <table id="employeeTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Department</th>
+                            <th>Position</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="employeeList"></tbody>
+                </table>
+            <section id="formView" class="view hidden">
+                <h2 id="formTitle">Add New Employee</h2>
+                <form id="employeeForm">
+                    <input type="hidden" id="employeeId">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" required pattern="^[A-Za-z\s]{2,50}$">
+                        <span class="error-message">Characters Only</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="department">Department:</label>
+                        <select id="department" required>
+                            <option value="">Select Department</option>
+                            <option value="IT">IT</option>
+                            <option value="HR">HR</option>
+                            <option value="Finance">Finance</option>
+                            <option value="Marketing">Marketing</option>
+                        </select>
+                    <!-- </div>
 
-        <tbody id="employee-table-body">
-            <!-- This Coming From TypeScript -->
-        </tbody>
-    </table>
+                    </div> -->
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                        <span class="error-message">Valid Email Only</span>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit">Save Employee</button>
+                        <button type="button" id="cancelForm">Cancel</button>
+                    </div>
+                </form>
+            </section>
 
-    <div id="pagination">
-        <button id="previous">Previous</button>
-        <button id="upcoming">Upcoming</button>
-        <a id="add" href="/Employee-Management/addEmployee.html">Add Employee</a>
-    </div>
+            <section id="detailView" class="view hidden">
+                <h2>Employee Details</h2>
+                <div id="employeeDetails"></div>
+                <div class="detail-actions">
+                    <button id="editEmployee">Edit</button>
+                    <button id="deleteEmployee">Delete</button>
+                    <button id="backToList">Back to List</button>
+                </div>
+            </section>
 
-<script src="app.ts"></script>
 
+    <script src="app.js"></script>
 </body>
-
 </html>

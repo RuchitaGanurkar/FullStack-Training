@@ -1,54 +1,145 @@
-#page-heading{
-    font-size: larger;
-    font-style: oblique;
-    text-align: center;
-    color: rgb(64, 127, 129);
-    padding: 5%;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-#employee-list-heading{
-    font-size: small;
-    font-style: normal;
-    text-align: left;
-    color: rgb(89, 87, 223);
-    padding: 2%;
+body {
+    font-family: monospace;
+    line-height: 1.6;
+    background-color: #f0c128;
+    font-weight: bold;
 }
 
-table {
-    width: 80%;
-    border-collapse: collapse;
-    margin-top: 5%;
-}
-
-table, th, td {
-    border: 1px solid #ddd;
-}
-
-th, td {
-    padding: 10px;
+header {
+    margin-bottom: 30px;
     text-align: center;
 }
 
-th {
-    background-color: #4d4242;
+header h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+nav button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #000000;
+    border-radius: 4px;
+}
+
+nav button.active {
+    background-color: #007bff;
     color: white;
 }
 
-input[type="text"] {
-    width: 80%;
-    padding: 8px;
-    margin-top: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    text-align: center;
+.view {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-#enter-button, #pagination, #previous, #upcoming, #add, #edit {
-    text-align: center;
-    font-size: 100%;
-    padding: 0.5%;
-    margin-top: 2%;
-    color: chocolate;
-    font-weight: bold;
-    text-decoration: none;
+.hidden {
+    display: none;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.search-box input,
+.filters select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f8f9fa;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-group input:invalid {
+    border-color: #dc3545;
+}
+
+.error-message {
+    display: none;
+    color: #dc3545;
+    font-size: 0.8em;
+    margin-top: 5px;
+}
+
+.form-actions,
+.detail-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+}
+
+button[type="button"] {
+    background-color: #6c757d;
+}
+
+button#deleteEmployee {
+    background-color: #dc3545;
+}
+
+#employeeDetails {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
 }
